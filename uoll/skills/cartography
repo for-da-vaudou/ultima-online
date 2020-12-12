@@ -1,0 +1,30 @@
+// ************************ //
+// Script name: Cartography //
+// Author: Zell             //
+// ************************ //
+
+// Instructions
+// - Create buy agent for 1 map
+// - Create sell agent for 1 map
+// - Add gold to scav and turn on
+// - Position him at the map vendor, static of following. Start with 5k gold and when it gets low use another character to drop gold at this guys feet
+
+say "vendor buy"
+if skill 'cartography' < 99.9
+  useskill 'cartography'
+  pause 1000
+  gumpresponse 9
+  pause 12500
+  targettype 5355 backpack
+  pause 1000
+  if insysmsg 'No item'
+    clearsysmsg
+    script 'Cart'
+  else
+    say 'vendor sell'
+    pause 1000
+  endif
+elseif skill 'cartography' > 99.9
+  stop
+endif
+replay
