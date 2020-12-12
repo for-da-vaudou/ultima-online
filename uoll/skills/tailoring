@@ -1,0 +1,74 @@
+// ***************************** //
+// Script name: Taloring 30 - GM //
+// Author: Zell                  //
+// ***************************** //
+
+// Instructions
+// - This script currently assumes you have a storage container with sewing kits, will change that soon
+// - Create counters for sewing, cloth and leather
+// - Create a script variable called storage where you wish to get leather, cloth and sewing kits from
+// - Scissors are required
+// - Make sure they are active and enable counters for the following
+//   - sewing, cloth and leather
+
+if skill 'tailoring' < 78.8
+    if count 'sewing' < 1
+        restock 1
+        pause 1000
+        target 'storage'
+        pause 1500
+    endif
+    if count 'cloth' < 20
+        restock 2
+        pause 1000
+        target 'storage'
+        pause 1500
+    endif
+    dclicktype 3997 backpack
+    pause 1000
+    if skill 'tailoring' < 53.9
+        gumpresponse 8
+        pause 1000
+        gumpresponse 51
+        pause 6000
+        if findtype 5397 true
+            dclicktype 3999 backpack
+            pause 1500
+            targettype 5397 backpack
+            pause 500
+        endif
+    elseif skill 'tailoring' < 78.8
+        gumpresponse 8
+        pause 1000
+        gumpresponse 58
+        pause 5000
+        if findtype 7939 true
+            dclicktype 3999 backpack
+            pause 1000
+            targettype 7939 backpack
+        endif
+    endif
+endif
+if skill 'tailoring' > 78.7
+    if skill 'tailoring' > 99.8
+        stop
+    endif
+    if count 'leather' < 20
+        restock 3
+        pause 1000
+        target 'storage'
+        pause 1500
+    endif
+    dclicktype 3997 backpack
+    pause 1000
+    gumpresponse 43
+    pause 1000
+    gumpresponse 2
+    pause 6000
+    if findtype 5078 true
+        dclicktype 3999 backpack
+        pause 1000
+        targettype 5078 backpack
+    endif
+endif
+replay
