@@ -1,0 +1,78 @@
+// ********************
+// Script name: Lockpicking 30 - GM
+// Author: Zell
+// ********************
+
+// Instructions
+// - This script assumes you have tinkering to make tongs and tinker tools
+// - Create counters for Lockpicks
+// - Create a script variable called storage where you wish to get Lockpicks from
+// - Line your boxes up left to right, from thirty > fifty > seventy > GM
+// - IMPORTANT - REMOVE EACH KEYB FROM ITS BOX AND PLACE IN YOUR TOP LEVEL BACKPACK
+// - Add script variables for each box called thirty, fifty, seventy and geem
+// - Add script variables for each box key called, tkey, fkey, skey and gkey
+// - Make sure they are active and enable counters for the following
+//   - Lockpicks
+
+if count 'Lockpicks' < 1
+    restock 1
+    pause 1000
+    target 'storage'
+    pause 2000
+    if count 'Lockpicks' < 1
+        msg 'Out of picks'
+        stop
+    endif
+endif
+if skill 'lockpicking' < 35
+    dclicktype 5372 backpack
+    pause 1000
+    target 'thirty'
+    pause 3500
+    if insysmsg 'yields'
+        dclick 'tkey'
+        pause 1000
+        target 'thirty'
+        pause 1500
+        clearsysmsg 
+    endif
+elseif skill 'lockpicking' < 55
+    dclicktype 5372 backpack
+    pause 1000
+    target 'fifty'
+    pause 3500
+    if insysmsg 'yields'
+        dclick 'fkey'
+        pause 1000
+        target 'fifty'
+        pause 1500
+        clearsysmsg 
+    endif
+elseif skill 'lockpicking' < 77
+    dclicktype 5372 backpack
+    pause 1000
+    target 'seventy'
+    pause 3500
+    if insysmsg 'yields'
+        dclick 'skey'
+        pause 1000
+        target 'seventy'
+        pause 1500
+        clearsysmsg 
+    endif
+elseif skill 'lockpicking' < 95.3
+    dclicktype 5372 backpack
+    pause 1000
+    target 'geem'
+    pause 3500
+    if insysmsg 'yields'
+        dclick 'gkey'
+        pause 1000
+        target 'geem'
+        pause 1500
+        clearsysmsg 
+    endif
+elseif skill 'lockpicking' > 95.3 // Stops here for my str/dex/int level, so adjust as required.
+    stop
+endif
+replay
