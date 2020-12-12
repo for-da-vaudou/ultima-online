@@ -1,0 +1,103 @@
+// ********************
+// Script name: Blacksmithy 30 - GM
+// Author: Zell
+// ********************
+
+// Instructions
+// - This script assumes you have tinkering to make tongs and tinker tools
+// - Create counters for Iron Ingots, Tinker Tool and Tongs
+// - Create a script variable called storage where you wish to get ingots from
+// - Make sure they are active and enable counters for the following
+//   - Iron Ingot, Tinker Tool and Tongs
+
+if count 'Iron Ingot' < 20
+    restock 1
+    target 'storage'
+    pause 1500
+endif
+if count 'Tinker Tool' < 2
+    dclicktype 7864 backpack
+    pause 1000   
+    gumpresponse 1
+    pause 1000
+    gumpresponse 23
+    pause 7000
+endif
+if count 'Tongs' < 1
+    dclicktype 7864 backpack
+    pause 1000 
+    gumpresponse 1
+    pause 1000
+    gumpresponse 86
+    pause 7000
+endif
+if skill 'Blacksmithy' < 65
+    dclicktype 4027 backpack
+    pause 1000
+    gumpresponse 36
+    pause 1000
+    gumpresponse 9
+    pause 6500
+    if findtype 5185 true
+        gumpresponse 14
+        pause 1000
+        targettype 5185 backpack
+        pause 1000
+    endif
+elseif skill 'Blacksmithy' < 75
+    dclicktype 4027 backpack
+    pause 1000
+    gumpresponse 36
+    pause 1000
+    gumpresponse 44
+    pause 6500
+    if findtype 5121 true
+        gumpresponse 14
+        pause 1000
+        targettype 5121 backpack
+        pause 1000
+    endif
+elseif skill 'Blacksmithy' < 85
+    dclicktype 4027 backpack
+    pause 1000
+    gumpresponse 50
+    pause 1000
+    gumpresponse 23
+    pause 6500
+    if findtype 5123 true
+        gumpresponse 14
+        pause 1000
+        targettype 5123 backpack
+        pause 1000
+    endif
+elseif skill 'Blacksmithy' < 95
+    dclicktype 4027 backpack
+    pause 1000
+    gumpresponse 15
+    pause 1000
+    gumpresponse 9
+    pause 6500
+    if findtype 5139 true
+        gumpresponse 14
+        pause 1000
+        targettype 5139 backpack
+        pause 1000
+    endif
+elseif skill 'Blacksmithy' < 100
+    dclicktype 4027 backpack
+    pause 1000
+    gumpresponse 15
+    pause 1000
+    gumpresponse 16
+    pause 6500
+    if findtype 5140 true
+        gumpresponse 14
+        pause 1000
+        targettype 5140 backpack
+        pause 1000
+    endif
+endif
+if skill 'Blacksmithy' > 99.9
+  stop
+endif
+replay
