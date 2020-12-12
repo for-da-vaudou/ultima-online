@@ -1,3 +1,16 @@
+// ********************
+// Script name: Alchemy
+// Author: Zell
+// ********************
+
+// Instructions
+// - Create counters for mortar and pestle and empty keg
+// - Make sure you have scissors in your bag
+// - Create a script variable called storage where you wish to get empty kegs and reagents from
+// - Create a script variable called fnished where you wish to dump full kegs
+// - Make sure they are active and enable counters for the following
+//   - all reagents, empty keg, mortar and pestle, all potions
+
 if count 'mortar and pestle' < 1
     restock 2
     waitfortarget 
