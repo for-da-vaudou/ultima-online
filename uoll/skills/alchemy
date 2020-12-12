@@ -1,0 +1,109 @@
+if count 'mortar and pestle' < 1
+    restock 2
+    waitfortarget 
+    target 'tools'
+    wait 2000
+    dclicktype 7864 backpack
+    waitforgump 
+    gumpresponse 21
+    waitforgump 
+    script 'Alchemy'
+endif
+if count 'empty keg' < 1
+    restock 3
+    waitfortarget 
+    target 'kegs'
+    wait 2000
+    dclicktype 'scissors' backpack 
+    wait 2000 
+    targettype 6464 backpack
+    wait 1000
+endif
+if skill 'alchemy' < 45
+    if count 'black pearl' < 10
+        restock 1
+        waitfortarget 
+        target 'storage'
+        wait 2000
+        script 'Alchemy'
+    endif
+    dclicktype 3739 backpack
+    waitforgump 
+    gumpresponse 1
+    waitforgump 
+    gumpresponse 9
+    wait 5000 
+    if count 'total refresh potion' > 0
+        lifttype 3851 backpack
+        drop 'lasttarget' -1 -1 0
+        wait 1500
+    endif
+elseif skill 'alchemy' < 65
+    if count 'mandrake root' < 10
+        restock 4
+        waitfortarget 
+        target 'storage'
+        wait 2000
+        script 'Alchemy'
+    endif
+    dclicktype 3739 backpack
+    waitforgump 
+    gumpresponse 29
+    waitforgump 
+    gumpresponse 9
+    wait 5000
+    if count 'greater strength potion' > 0
+        lifttype 3849 backpack
+        drop 'lasttarget' -1 -1 0
+        wait 1500
+    endif
+elseif skill 'alchemy' < 75
+    if count 'ginseng' < 10
+        restock 5
+        waitfortarget 
+        target 'storage'
+        wait 2000
+        script 'Alchemy'
+    endif
+    dclicktype 3739 backpack
+    waitforgump 
+    gumpresponse 22
+    waitforgump 
+    gumpresponse 16
+    wait 5000
+    if count 'greater heal potion' > 0
+        lifttype 3852 backpack
+        drop 'lasttarget' -1 -1 0
+        wait 1500
+    endif
+elseif skill 'alchemy' < 100
+    if count 'garlic' < 10
+        restock 6
+        waitfortarget 
+        target 'storage'
+        wait 2000
+        script 'Alchemy'
+    endif
+    dclicktype 3739 backpack
+    waitforgump 
+    gumpresponse 43
+    waitforgump 
+    gumpresponse 16
+    wait 5000
+    if count 'greater heal potion' > 0
+        lifttype 3847 backpack
+        drop 'lasttarget' -1 -1 0
+        wait 1500
+    endif
+endif
+if insysmsg 'decide not to'
+    lift 'lasttarget' 1
+    drop 'finished' 17 104 0
+    wait 2000
+endif
+if insysmsg 'The keg will not hold'
+    lift 'lasttarget' 1
+    drop 'finished' 17 104 0
+    wait 2000
+endif
+replay
