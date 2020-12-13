@@ -1,0 +1,46 @@
+restock 2
+wait 1000
+target 'storage'
+wait 1000
+while not insysmsg'restock done'
+endwhile
+clearsysmsg 
+wait 1000
+dclicktype 6464 'backpack'
+wait 1000
+if insysmsg 'where is a container'
+    hotkey 'Cancel Current Target'
+    wait 1000
+    endif
+if insysmsg 'keg is empty'
+    lifttype 6464 backpack
+wait 1000
+drop 'empty kegs' 70 51 0
+wait 1000
+restock 2
+wait 1000
+target 'full kegs'
+wait 1000
+dclicktype 6464
+wait 1000
+endif
+clearsysmsg
+targettype 5119 backpack
+wait 1000
+if not insysmsg 'no item'
+    clearsysmsg 
+    useskill poisoning
+    pause 1000
+    targettype 3850 'backpack'
+    pause 1000
+    targettype 5119 backpack
+    while not insysmsg 'You apply the poison'
+    endwhile
+    lifttype 5119 backpack
+    wait 1000
+    drop 'finished katana' 70 51 0
+    wait 3000
+    script 'dp katana'
+endif
+say 'no katana found'
+script 'dp kriss'
