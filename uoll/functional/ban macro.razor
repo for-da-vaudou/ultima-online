@@ -1,0 +1,14 @@
+hotkey 'Next Humanoid Target' 
+hotkey 'Add Target To: pku'
+lasttarget true
+while insysmsg 'added'
+    clearsysmsg
+    say 'I ban thee'
+    wait 900
+    lasttarget
+    hotkey 'Next Humanoid Target' 
+    hotkey 'Add Target To: pku'
+    lasttarget
+    endwhile 
+    if not hidden
+    useskill 'hiding'
