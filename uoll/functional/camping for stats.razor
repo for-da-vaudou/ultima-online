@@ -1,0 +1,50 @@
+//script will raise strength and intelligence to 100
+//assumes you have boards on you and 700 skill base
+//skills should be all marked as locked or up, with camping at 0
+//strength and intelligence locked up
+while int < 100
+    dclicktype 3553 backpack
+    wait 500
+    if insysmsg 'no item'
+         dclicktype 'dagger' backpack
+         waitfortarget
+         targettype 7127 backpack
+         waitforgump 949095101
+         gumpresponse 1
+         waitforgump 949095101
+         gumpresponse 2
+         waitforgump 949095101
+         gumpresponse 2
+         waitforgump 949095101
+         gumpresponse 2
+         waitforgump 949095101
+         gumpresponse 2
+         waitforgump 949095101
+         gumpresponse 2
+         waitforgump 949095101
+         gumpclose
+    endif
+    endwhile
+while str < 100
+    dclicktype 3553 backpack
+    wait 500
+    if insysmsg 'no item'
+         dclicktype 'dagger' backpack
+         waitfortarget
+         targettype 7127 backpack
+         waitforgump 949095101
+         gumpresponse 1
+         waitforgump 949095101
+         gumpresponse 2
+         waitforgump 949095101
+         gumpresponse 2
+         waitforgump 949095101
+         gumpresponse 2
+         waitforgump 949095101
+         gumpresponse 2
+         waitforgump 949095101
+         gumpresponse 2
+         waitforgump 949095101
+         gumpclose
+    endif
+    endwhile
