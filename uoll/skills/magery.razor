@@ -1,0 +1,187 @@
+//33-60 Lightning
+//60-80 Energy Bolt
+//80-GM Flame Strike
+//restock 1 50 pearl shade drake ash
+
+if count 'black pearl' < 10 
+    restock 1
+    wft
+    target 'storage'
+    wait 4000
+    endwhile
+if count 'sulfurous ash' < 10
+    restock 1
+    wft
+    target 'storage'
+    wait 4000
+endif
+if skill 'magery' < 60  and skill 'meditation' < 40
+while mana < 55
+useskill 'meditation'
+wait 1000
+endwhile
+cast 'lightning'
+pause 2000
+target 'self'
+pause 900
+script 'magery'
+elseif skill magery < 60 and skill 'meditation' < 50
+while mana < 50
+useskill 'meditation'
+wait 1000
+endwhile
+cast 'lightning'
+waitfortarget
+target 'self'
+pause 900
+script 'magery'
+elseif skill magery < 60 and skill 'meditation' < 60
+while mana < 45
+useskill 'meditation'
+wait 1000
+endwhile
+cast 'lightning'
+waitfortarget
+target 'self'
+pause 900
+script 'magery'
+elseif skill magery < 60 and skill 'meditation' < 101
+while mana < 30
+useskill 'meditation'
+wait 1000
+endwhile
+cast 'lightning'
+waitfortarget
+target 'self'
+pause 900
+script 'magery'
+elseif skill magery < 80 and skill 'meditation' < 40
+    while mana < 70
+useskill 'meditation'
+wait 1000
+endwhile
+cast 'energy bolt'
+waitfortarget
+target 'self'
+pause 900
+script 'magery'
+elseif skill magery < 80 and skill 'meditation' < 50
+    while mana < 65
+useskill 'meditation'
+wait 1000
+endwhile
+cast 'energy bolt'
+waitfortarget
+target 'self'
+pause 900
+script 'magery'
+elseif skill magery < 80 and skill 'meditation' < 60
+    while mana < 60
+useskill 'meditation'
+wait 1000
+endwhile
+cast 'energy bolt'
+waitfortarget
+target 'self'
+pause 900
+script 'magery'
+elseif skill magery < 80 and skill 'meditation' < 70
+    while mana < 50
+useskill 'meditation'
+wait 1000
+endwhile
+cast 'energy bolt'
+waitfortarget
+target 'self'
+pause 900
+script 'magery'
+elseif skill magery < 80 and skill 'meditation' < 101
+while mana < 40
+useskill 'meditation'
+wait 1000
+endwhile
+cast 'energy bolt'
+waitfortarget
+target 'self'
+pause 900
+script 'magery'
+elseif skill magery < 100 and skill 'meditation' < 50
+while mana < 75
+useskill 'meditation'
+wait 1000
+endwhile
+cast 'flamestrike'
+waitfortarget
+target 'self'
+script 'magery'
+elseif skill magery < 100 and skill 'meditation' < 60
+while mana < 70
+useskill 'meditation'
+wait 1000
+endwhile
+cast 'flamestrike'
+waitfortarget
+target 'self'
+pause 900
+script 'magery'
+elseif skill magery < 100 and skill 'meditation' < 70
+while mana < 65
+useskill 'meditation'
+wait 1000
+endwhile
+cast 'flamestrike'
+waitfortarget
+target 'self'
+pause 900
+script 'magery'
+elseif skill magery < 100 and skill 'meditation' < 80
+while mana < 60
+useskill 'meditation'
+wait 1000
+endwhile
+cast 'flamestrike'
+waitfortarget
+target 'self'
+pause 900
+script 'magery'
+elseif skill magery < 100 and skill 'meditation' < 90
+while mana < 55
+useskill 'meditation'
+wait 1000
+endwhile
+cast 'flamestrike'
+waitfortarget
+target 'self'
+pause 900
+script 'magery'
+elseif skill magery < 100 and skill 'meditation' < 94.9
+while mana < 50
+useskill 'meditation'
+wait 1000
+endwhile
+cast 'flamestrike'
+waitfortarget
+target 'self'
+pause 900
+script 'magery'
+elseif skill magery < 100 and skill 'meditation' < 100
+    while mana < 40
+useskill 'meditation'
+wait 1000
+endwhile
+cast 'flamestrike'
+waitfortarget
+target 'self'
+pause 900
+script 'magery'
+elseif skill magery < 100 and skill 'meditation' < 101
+    while mana < 75
+useskill 'meditation'
+wait 1000
+endwhile
+cast 'flamestrike'
+waitfortarget
+target 'self'
+pause 900
+script 'magery'
+endif
