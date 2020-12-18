@@ -1,8 +1,9 @@
 //33-60 Lightning
 //60-80 Energy Bolt
 //80-GM Flame Strike
-//restock 1 50 pearl shade drake ash
-
+//restock 1 50 pearl shade drake ash, variable 'storage' set where the reagents are stored
+//this script requires a healer, or to be done at bank. assumes you are at 100 int
+//raise resist to 55 before starting with firefield
 if count 'black pearl' < 10 
     restock 1
     wft
