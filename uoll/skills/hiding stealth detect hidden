@@ -1,0 +1,22 @@
+// ************************ //
+// Script name: Hiding Stealth Detect Hidden //
+// Author: Zell             //
+// ************************ //
+
+// Instructions
+// - Set a script variable called dh, and target a trapped container
+
+while skill 'detectinghidden' < 100
+    useskill 'detectinghidden'
+    pause 1000
+    target 'dh'
+    pause 11000
+endwhile
+while skill 'hiding' < 100 or skill 'stealth' < 100
+    useskill 'hiding'
+    pause 11000
+    if skill 'hiding' > 79.9
+        useskill 'stealth'
+        pause 11000
+    endif
+endwhile
