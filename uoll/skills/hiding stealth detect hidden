@@ -13,11 +13,14 @@ while skill 'detectinghidden' < 100
     pause 11000
 endwhile
 while skill 'hiding' < 100 or skill 'stealth' < 100
-    if not 'hidden'
+    if not hidden
         useskill 'hiding'
         pause 11000
     endif
     if skill 'hiding' > 79.9
+        if not hidden
+            script 'hiding stealth dh'
+        endif
         useskill 'stealth'
         pause 11000
     endif
