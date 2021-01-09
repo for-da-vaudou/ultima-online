@@ -9,7 +9,7 @@ if count 'black pearl' < 10
     wft
     target 'storage'
     wait 4000
-    endwhile
+endif
 if count 'sulfurous ash' < 10
     restock 1
     wft
